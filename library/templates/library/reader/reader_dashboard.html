@@ -1,0 +1,66 @@
+{% extends "library/base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="col-xxl-10 m-3">
+    <h1 class="header">Dashboard</h1>
+    <div class="row row-cols-2 row-cols-md-4 g-4 mt-1 mb-4">
+        <div class="col">
+            <div class="card mb-3 h-100">
+                <div class="card-body">
+                    <div class="card-value fs-1">{{ books_total }}</div>
+                    <div class="card-header">Borrowings</div>
+                    <div class="card-description small">Total count of your borrowings</div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 h-100">
+                <div class="card-body">
+                    <div class="card-value fs-1">{{ borrowed_books_count }}</div>
+                    <div class="card-header">Borrowed books</div>
+                    <div class="card-description small">Number of actual borrowed books</div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 h-100">
+                <div class="card-body">
+                    <div class="card-value fs-1">{{ books_after_deadline }}</div>
+                    <div class="card-header">After the deadline</div>
+                    <div class="card-description small">Books borrowed more than one month ago</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-6 m-3">
+    <h2>Last 5 borrowings</h2>
+    {% if last5borrowings %}
+    <table class="table table-hover table-borderless table-light table-sm small mb-4">
+        <thead>
+            <tr>
+                <th class="col"></th>
+                <th class="col">ID</th>
+                <th class="col">Title</th>
+                <th class="col">Author</th>
+                <th class="col">Borrow date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for borrowing in last5borrowings %}
+            <tr>
+                <td>{{ forloop.counter }}.</td>
+                <td class=" gray-text">{{ borrowing.id }}</td>
+                <td class=" gray-text">{{ borrowing.book.title }}</td>
+                <td class=" gray-text">{{ borrowing.book.author.name }} {{ borrowing.book.author.surname }}</td>
+                <td class=" gray-text">{{ borrowing.borrow_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p class="small text-secondary">There is no borrowing</p>
+{% endif %}
+</div>
+{% endblock %}

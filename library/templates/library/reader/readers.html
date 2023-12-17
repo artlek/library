@@ -1,0 +1,55 @@
+{% extends "library/base.html" %}
+
+{% block title %}Reader list{% endblock %}
+{% block content %}
+<div class="col-xxl-10 m-3">
+<h1 class="header">Reader list</h1>
+{% if readers %}
+    <div class="table-responsive">
+        <table class="table table-hover table-light table-sm small">
+            <thead>
+                <tr>
+                    <th class="col tight-width"></th>
+                    <th class="col tight-width">ID</th>
+                    <th class="col">first name</th>
+                    <th class="col">last name</th>
+                    <th class="col">username</th>
+                    <th class="col">e-mail</th>
+                    <th class="col">date joined</th>
+                    <th class="col tight-width">active</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reader in readers %}
+                <tr>
+                    <td>{{ forloop.counter }}.</td>
+                    <td class=" gray-text">{{ reader.id }}</td>
+                    <td class=" gray-text">{{ reader.first_name }}</td>
+                    <td class=" gray-text">{{ reader.last_name }}</td>
+                    <td class=" gray-text">{{ reader.username }}</td>
+                    <td class=" gray-text">{{ reader.email }}</td>
+                    <td class=" gray-text">{{ reader.date_joined|date }}</td>
+                    <td class=" gray-text">{{ reader.is_active }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination pagination-sm">
+            {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link main-link" href="?page=1">&laquo; first</a></li>
+                <li class="page-item"><a class="page-link main-link" href="?page={{ page_obj.previous_page_number }}">previous</a></li>
+            {% endif %}
+                <li class="page-item"><span class="page-link gray-text">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></li>
+            {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link main-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
+                <li class="page-item"><a class="page-link main-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+{% else %}
+    <p class="small text-secondary my-3">There is no reader</p>
+{% endif %}
+</div>
+{% endblock %}

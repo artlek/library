@@ -1,0 +1,40 @@
+{% extends "library/base.html" %}
+
+{% block title %}User profile{% endblock %}
+{% block content %}
+<div class="col-lg-4 m-3">
+	<h1 class="header">User profile</h1>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td class="book-detail-table-header">Username</td>
+                <td class=" gray-text">{{ user.username }}</td>
+            </tr>
+            <tr>
+                <td class="book-detail-table-header">First name</td>
+                <td class=" gray-text">{{ user.first_name }}</td>
+            </tr>
+            <tr>
+                <td class="book-detail-table-header">Last name</td>
+                <td class=" gray-text">{{ user.last_name }}</td>
+            </tr>
+            <tr>
+                <td class="book-detail-table-header">Email</td>
+                <td class=" gray-text">{{ user.email }}</td>
+            <tr>
+            <tr>
+                <td class="book-detail-table-header">Id</td>
+                 <td class=" gray-text">{{ user.id }}</td>
+            <tr>
+                <td class="book-detail-table-header">Group</td>
+                <td class=" gray-text">{{ request.user.groups.all.0.name }}</td>
+            </tr>
+            <tr>
+                <td class="book-detail-table-header">Sign up date</td>
+                <td class=" gray-text">{{ user.date_joined|date }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{% url "logout" %}" class="btn btn-danger btn-sm">logout</a>
+</div>
+{% endblock %}

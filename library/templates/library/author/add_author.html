@@ -1,0 +1,19 @@
+{% extends "library/base.html" %}
+
+{% block title %}Add Author{% endblock %}
+{% block content %}
+<div class="col-lg-4 m-3">
+<h1 class="header">Add an author</h1>
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="fieldWrapper">
+                <label class="form-label mt-2 mb-0 small">{{ field.label }}</label>
+                <div class="small">{{ field.errors }}</div>
+                {{ field }}
+            </div>
+        {% endfor %}
+        <button class="btn btn-success btn-sm" type="submit">Add author</button>	
+    </form>
+</div>
+{% endblock %}

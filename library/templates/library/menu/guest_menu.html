@@ -1,0 +1,11 @@
+<ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link main-menu {% if request.resolver_match.url_name  == 'index' %}active{% endif %}" href="{% url 'index' %}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link main-menu {% if request.resolver_match.url_name  == 'login' %}active{% endif %}" href="{% url 'login' %}">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link main-menu {% if request.resolver_match.url_name  == 'registration' %}active{% endif %}" href="{% url 'registration' %}">Registration</a>
+  </li>
+</ul>

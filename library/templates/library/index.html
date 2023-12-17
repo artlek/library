@@ -1,0 +1,30 @@
+{% extends "library/base.html" %}
+
+{% block title %}Library Application{% endblock %}
+{% block content %}
+<div class="col-xxl-10 m-3">
+    <h1 class="header">Welcome to Library Application!</h1>
+    <h2 class="header">About</h2>
+    <p class="gray-text">
+        This application is very simple app to manage books in a library. It may be helpful for a librarian but also for readers. 
+        Main function is adding books to the database with attributes like book title, author, publisher or number of pages.
+        As a librarian you can borrow a book to a reader and return it. As a reader you got list of books with all informations about them. 
+        Library App also shows you count of days left to return borrowed book and informs you how many days you keep it.
+    </p>
+    <p class="gray-text">
+        To start you have to register as a librarian by registration form. If the database is empty you have to fill it with information about books, authors etc.
+        It is possible only by user with librarian group.
+        To borrow a book, first any reader must by registered in the app. 
+        Second the librarian can borrow a book to a reader by clicking 'borrow a book' button in 'borrowings' menu link.
+        When it is done the borrowed book will be shown in list of borrowed books. 
+        Next the book can be returned.
+    </p>
+    <p class="gray-text">
+        Library Application uses technologies like Django, Django REST framework, Bootstrap and CSS. It is created only for education purposes.
+    </p>
+    <h2 class="header">Book Catalogue</h2>
+    <p class="gray-text">
+        <a class="main-link small" href="{% url "book-catalogue" %}" target="_blank">Book Catalogue</a> is additional app which uses API of Library Application.
+        The app is created only to browse book list and check availability of a book. You can use it without loggin in.
+    </p>
+{% endblock %}

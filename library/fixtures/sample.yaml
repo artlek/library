@@ -1,0 +1,536 @@
+- model: library.Cover
+  pk: 1
+  fields:
+    name: hardback
+- model: library.Cover
+  pk: 2
+  fields:
+    name: paperback
+
+- model: library.Category
+  pk: 1
+  fields:
+    name: default
+- model: library.Category
+  pk: 2
+  fields:
+    name: Fiction
+- model: library.Category
+  pk: 3
+  fields:
+    name: Novel
+- model: library.Category
+  pk: 4
+  fields:
+    name: Romance
+- model: library.Category
+  pk: 5
+  fields:
+    name: Choldren's Book
+- model: library.Category
+  pk: 6
+  fields:
+    name: Biography
+- model: library.Category
+  pk: 7
+  fields:
+    name: Autobiography
+- model: library.Category
+  pk: 8
+  fields:
+    name: Political
+- model: library.Category
+  pk: 9
+  fields:
+    name: Mystery
+- model: library.Category
+  pk: 10
+  fields:
+    name: Thriller
+- model: library.Category
+  pk: 11
+  fields:
+    name: Cookbook
+- model: library.Category
+  pk: 12
+  fields:
+    name: History
+
+- model: library.Publisher
+  pk: 1
+  fields:
+    name: Monster Ltd
+- model: library.Publisher
+  pk: 2
+  fields:
+    name: Morning Publishing
+- model: library.Publisher
+  pk: 3
+  fields:
+    name: Sisters Group Ltd
+- model: library.Publisher
+  pk: 4
+  fields:
+    name: Happy Cows Publishers
+- model: library.Publisher
+  pk: 5
+  fields:
+    name: Benjamin Buttshow Group
+- model: library.Publisher
+  pk: 6
+  fields:
+    name: Art & Lex
+- model: library.Publisher
+  pk: 7
+  fields:
+    name: South Lake Publisher
+- model: library.Publisher
+  pk: 8
+  fields:
+    name: Political Hostage Establishment
+- model: library.Publisher
+  pk: 9
+  fields:
+    name: One to One Office
+- model: library.Publisher
+  pk: 10
+  fields:
+    name: Make It Possible Ltd
+- model: library.Publisher
+  pk: 11
+  fields:
+    name: Simple Corp.
+- model: library.Publisher
+  pk: 12
+  fields:
+    name: M&M Publishing
+- model: library.Publisher
+  pk: 13
+  fields:
+    name: Productive Pencil Ltd
+- model: library.Publisher
+  pk: 14
+  fields:
+    name: PBL
+- model: library.Publisher
+  pk: 15
+  fields:
+    name: Dunnam and Bricker
+- model: library.Publisher
+  pk: 16
+  fields:
+    name: One Hundret Words Publishment
+- model: library.Publisher
+  pk: 17
+  fields:
+    name: Inverness Dot
+- model: library.Publisher
+  pk: 18
+  fields:
+    name: Cote Partnership
+- model: library.Publisher
+  pk: 19
+  fields:
+    name: Zero Gravity Corporation
+- model: library.Publisher
+  pk: 20
+  fields:
+    name: Pine Tree Group
+
+- model: library.Author
+  pk: 1
+  fields:
+    name: Teresa
+    surname: Colderlark
+- model: library.Author
+  pk: 2
+  fields:
+    name: John
+    surname: Nebraska
+- model: library.Author
+  pk: 3
+  fields:
+    name: Monica
+    surname: Brown
+- model: library.Author
+  pk: 4
+  fields:
+    name: Roberta
+    surname: Sorrey
+- model: library.Author
+  pk: 5
+  fields:
+    name: Laurie
+    surname: Pie
+- model: library.Author
+  pk: 6
+  fields:
+    name: David
+    surname: Redman
+- model: library.Author
+  pk: 7
+  fields:
+    name: Thomas
+    surname: Bishop
+- model: library.Author
+  pk: 8
+  fields:
+    name: Billy
+    surname: McJohnson
+- model: library.Author
+  pk: 9
+  fields:
+    name: Gabrielle
+    surname: Peacock
+- model: library.Author
+  pk: 10
+  fields:
+    name: Olly
+    surname: Roggerstern
+- model: library.Author
+  pk: 11
+  fields:
+    name: Mike
+    surname: Blueberry
+- model: library.Author
+  pk: 12
+  fields:
+    name: Tim
+    surname: Hummings
+- model: library.Author
+  pk: 13
+  fields:
+    name: Bonnie
+    surname: Falcon
+- model: library.Author
+  pk: 14
+  fields:
+    name: Richard
+    surname: Samstern
+- model: library.Author
+  pk: 15
+  fields:
+    name: Jamie
+    surname: Oriols
+- model: library.Author
+  pk: 16
+  fields:
+    name: Peter
+    surname: Smith
+- model: library.Author
+  pk: 17
+  fields:
+    name: Claire
+    surname: Megan
+- model: library.Author
+  pk: 18
+  fields:
+    name: Stewart
+    surname: Raven
+- model: library.Author
+  pk: 19
+  fields:
+    name: Margareth
+    surname: Oldpheasant
+- model: library.Author
+  pk: 20
+  fields:
+    name: Rita
+    surname: Spencer
+- model: library.Author
+  pk: 21
+  fields:
+    name: Alex
+    surname: Harmel
+- model: library.Author
+  pk: 22
+  fields:
+    name: Bob
+    surname: Rubbys
+- model: library.Author
+  pk: 23
+  fields:
+    name: Gilbert
+    surname: Rush
+- model: library.Author
+  pk: 24
+  fields:
+    name: Morthy
+    surname: Vanished
+- model: library.Author
+  pk: 25
+  fields:
+    name: Diana
+    surname: Narvent
+
+- model: library.Book
+  fields:
+    title: The Woman in Me
+    author: 18
+    published: 2022-02-16
+    pages: 288
+    category: 11
+    publisher: 5
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+- model: library.Book
+  fields:
+    title: Diary of My Kid
+    author: 2
+    published: 2023-01-30
+    pages: 191
+    category: 6
+    publisher: 2
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+- model: library.Book
+  fields:
+    title: Really and Good
+    author: 13
+    published: 2020-05-29
+    pages: 95
+    category: 11
+    publisher: 3
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+- model: library.Book
+  fields:
+    title: The Last One
+    author: 14
+    published: 2019-12-14
+    pages: 314
+    category: 8
+    publisher: 4
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 2
+- model: library.Book
+  fields:
+    title: White Coffee
+    author: 5
+    published: 2023-06-25
+    pages: 247
+    category: 9
+    publisher: 5
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+- model: library.Book
+  fields:
+    title: "The Birds of Eastern Asia: Another World"
+    author: 15
+    published: 2017-02-18
+    pages: 290
+    category: 7
+    publisher: 10
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+- model: library.Book
+  fields:
+    title: A World in the Making
+    author: 7
+    published: 2022-08-11
+    pages: 177
+    category: 1
+    publisher: 5
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+    is_borrowed: False 
+- model: library.Book
+  fields:
+    title: Eggs In The Main Role - Exclusive Edition
+    author: 8
+    published: 2016-11-02
+    pages: 209
+    category: 11
+    publisher: 2
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 2
+- model: library.Book
+  fields:
+    title: Tomorrow
+    author: 9
+    published: 2022-09-22
+    pages: 246
+    category: 11
+    publisher: 8
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 2
+- model: library.Book
+  fields:
+    title: Puzzle of Wilds
+    author: 10
+    published: 2020-11-15
+    pages: 404
+    category: 12
+    publisher: 2
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 2
+- model: library.Book
+  fields:
+    title: When The Crane Flies Away
+    author: 17
+    published: 2019-12-01
+    pages: 166
+    category: 8
+    publisher: 10
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+- model: library.Book
+  fields:
+    title: The Future
+    author: 16
+    published: 2022-06-19
+    pages: 228
+    category: 1
+    publisher: 7
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 2
+- model: library.Book
+  fields:
+    title: My Lesson
+    author: 4
+    published: 2019-10-10
+    pages: 193
+    category: 7
+    publisher: 5
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+- model: library.Book
+  fields:
+    title: The Black Hole
+    author: 14
+    published: 2022-03-13
+    pages: 233
+    category: 6
+    publisher: 9
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 2
+- model: library.Book
+  fields:
+    title: 5 Ingredients
+    author: 15
+    published: 2015-12-10
+    pages: 260
+    category: 11
+    publisher: 3
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 2
+- model: library.Book
+  fields:
+    title: The Television Lies
+    author: 16
+    published: 2020-07-31
+    pages: 251
+    category: 4
+    publisher: 2
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 2
+- model: library.Book
+  fields:
+    title: The History of Ben
+    author: 6
+    published: 2019-04-04
+    pages: 211
+    category: 5
+    publisher: 1
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+- model: library.Book
+  fields:
+    title: On the Edge
+    author: 18
+    published: 2018-05-28
+    pages: 310
+    category: 9
+    publisher: 4
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+- model: library.Book
+  fields:
+    title: Cold Days
+    author: 19
+    published: 2023-06-12
+    pages: 305
+    category: 6
+    publisher: 5
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+- model: library.Book
+  fields:
+    title: The Panic Fear
+    author: 20
+    published: 2017-01-29
+    pages: 208
+    category: 11
+    publisher: 17
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 2
+- model: library.Book
+  fields:
+    title: Cosmica
+    author: 22
+    published: 2023-10-15
+    pages: 301
+    category: 10
+    publisher: 20
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+- model: library.Book
+  fields:
+    title: Waiting For Asylium
+    author: 14
+    published: 2021-05-22
+    pages: 134
+    category: 6
+    publisher: 17
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 2
+- model: library.Book
+  fields:
+    title: Long Anthology, Pt. 2
+    author: 24
+    published: 2023-02-11
+    pages: 286
+    category: 11
+    publisher: 13
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 2
+- model: library.Book
+  fields:
+    title: Earning Drops
+    author: 20
+    published: 2020-06-17
+    pages: 199
+    category: 12
+    publisher: 12
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 2
+- model: library.Book
+  fields:
+    title: Dust
+    author: 23
+    published: 2019-12-14
+    pages: 305
+    category: 1
+    publisher: 16
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+- model: library.Book
+  fields:
+    title: Necessary Movement
+    author: 21
+    published: 2022-03-28
+    pages: 396
+    category: 9
+    publisher: 18
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1
+- model: library.Book
+  fields:
+    title: The Darkplay
+    author: 25
+    published: 2015-09-13
+    pages: 311
+    category: 6
+    publisher: 16
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    cover: 1

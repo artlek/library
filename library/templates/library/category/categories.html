@@ -1,0 +1,44 @@
+{% extends "library/base.html" %}
+
+{% block title %}Category list{% endblock %}
+{% block content %}
+<div class="col-lg-4 m-3">
+<h1 class="header">Category list</h1>
+<a href="{% url "add_category" %}" class="btn btn-success btn-sm">Add category</a>
+{% if categories %}
+    <table class="table table-hover table-light table-sm small">
+        <thead>
+            <tr>
+                <th class="col tight-width"></th>
+                <th class="col tight-width">ID</th>
+                <th class="col medium-width">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for category in page_obj %}
+            <tr>
+                <td>{{ category.counter }}.</td>
+                <td class=" gray-text">{{ category.id }}</td>
+                <td><a href="{% url "edit_category" category.id %}" class="main-link">{{ category.name }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination pagination-sm">
+            {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link main-link" href="?page=1">&laquo; first</a></li>
+                <li class="page-item"><a class="page-link main-link" href="?page={{ page_obj.previous_page_number }}">previous</a></li>
+            {% endif %}
+                <li class="page-item"><span class="page-link gray-text">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></li>
+            {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link main-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
+                <li class="page-item"><a class="page-link main-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+{% else %}
+    <p class="small text-secondary my-3">There is no category</p>
+{% endif %}
+</div>
+{% endblock %}

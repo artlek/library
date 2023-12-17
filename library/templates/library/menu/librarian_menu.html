@@ -1,0 +1,29 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link main-menu {% if request.resolver_match.url_name  == 'index' %}active{% endif %}" href="{% url 'index' %}">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link main-menu {% if request.resolver_match.url_name  == 'librarian_dashboard' %}active{% endif %}" href="{% url 'librarian_dashboard' %}">Dashboard</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link main-menu {% if request.resolver_match.url_name  == 'borrowings' %}active{% endif %}" href="{% url 'borrowings' %}">Borrowings</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle main-menu 
+    {% if request.resolver_match.url_name  == "books" %}active
+    {% elif request.resolver_match.url_name  == "authors" %}active
+    {% elif request.resolver_match.url_name  == "publishers" %}active
+    {% elif request.resolver_match.url_name  == "categories" %}active
+    {% elif request.resolver_match.url_name  == "covers" %}active
+    {% elif request.resolver_match.url_name  == "readers" %}active
+    {% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Management</a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item main-menu" href="{% url "books" %}">Books</a></li>
+      <li><a class="dropdown-item main-menu" href="{% url "authors" %}">Authors</a></li>
+      <li><a class="dropdown-item main-menu" href="{% url "publishers" %}">Publishers</a></li>
+      <li><a class="dropdown-item main-menu" href="{% url "categories" %}">Categories</a></li>
+      <li><a class="dropdown-item main-menu" href="{% url "covers" %}">Covers</a></li>
+      <li><a class="dropdown-item main-menu" href="{% url "readers" %}">Readers</a></li>
+    </ul>
+  </li>
+</ul>

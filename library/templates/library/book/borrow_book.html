@@ -1,0 +1,37 @@
+{% extends 'library/base.html' %}
+
+{% block title %}Borrow a book{% endblock %}
+{% block content %}
+<div class="col-lg-4 m-3">
+	<h1 class="header">Borrow a book to a reader</h1>
+	{% if user and book %}
+	<table class="table table-bordered m-2 mb-4">
+		<tbody>
+			<tr>
+				<td class="book-detail-table-header">Book</td>
+				<td>{{ book.title }}<br>{{ book.author }}<br>Id: {{ book.id }}</td>
+			</tr>
+				<td class="book-detail-table-header">User</td>
+				<td>{{ user.first_name }} {{ user.last_name }}<br>Id: {{ user.id }}</td>
+			</tr>
+		</tbody>
+	</table>
+	{% endif %}
+	<form method="POST" novalidate>
+		{% csrf_token %}
+		{% for field in form %}
+			<div class="fieldWrapper">
+				<label class="form-label small">{{ field.label }}</label>
+				<div class="small">{{ field.errors }}</div>
+				{{ field }}
+			</div>
+		{% endfor %}
+		<button class="btn btn-primary btn-sm" type="submit" name="check" value="check">Check</button>
+		{% if user and book %}
+			<button class="btn btn-success btn-sm" type="submit" name="borrow" value="borrow">Borrow</button>
+		{% else %}
+			<button class="btn btn-success btn-sm disabled" aria-disabled="true" role="button" value="borrow">Borrow</button>	
+		{% endif %}
+	</form>
+</div>
+{% endblock content %}

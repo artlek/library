@@ -1,0 +1,38 @@
+{% extends "library/base.html" %}
+
+{% block title %}Edit Publisher: {{ publisher_object.name }}{% endblock %}
+{% block content %}
+<div class="col-lg-4 m-3">
+  <h1 class="header">Edit publisher</h1>
+  <h2 class="my-3 header">{{ publisher_object.name }}</h2>
+  <form method="POST" novalidate>
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="fieldWrapper">
+        <label class="form-label mt-2 mb-0 small">{{ field.label }}</label>
+          <div class="small">{{ field.errors }}</div>
+            {{ field }}
+          </div>
+    {% endfor %}
+    <button class="btn btn-success btn-sm" type="submit">Edit publisher</button>
+    <button type="button" class="btn-sm btn-danger btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete publisher</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">{{ publisher_object.name }} {{ publisher_object.surname }}</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body gray-text">Do you really want to delete the publisher?</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+            <a href="/delete-publisher/{{ publisher_object.id }}" class="btn btn-danger btn-sm" type="button">Delete publisher</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

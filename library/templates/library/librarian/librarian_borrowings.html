@@ -1,0 +1,42 @@
+{% extends "library/base.html" %}
+
+{% block title %}Borrowing list{% endblock %}
+{% block content %}
+<div class="col-xxl-10 m-3">
+<h1 class="header">Borrowing list</h1>
+<a href="{% url "borrow_book" %}" class="btn btn-success btn-sm">Borrow a book</a>
+<a href="{% url "return_book" %}" class="btn btn-primary btn-sm">Return a book</a>
+{% if borrowings %}
+    <div class="table-responsive">
+        <table class="table table-hover table-light table-sm small">
+            <thead>
+                <tr>
+                    <th class="col"></th>
+                    <th class="col">Book</th>
+                    <th class="col">Reader</th>
+                    <th class="col">Days left to return</th>
+                    <th class="col">Borrowing days</th>
+                    <th class="col">Borrowe date</th>
+                    <th class="col">Return date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for borrowing in borrowings %}
+                <tr>
+                    <td>{{ forloop.counter }}.</td>
+                    <td class=" gray-text">{{ borrowing.book.id }}: {{ borrowing.book.title }}, {{ borrowing.book.author.name }} {{ borrowing.book.author.surname }}</td>
+                    <td class=" gray-text">{{ borrowing.user.id }}: {{ borrowing.user.first_name }} {{ borrowing.user.last_name }}</td>
+                    <td class=" gray-text">{% if borrowing.days_left < 0 %}<spam class="text-danger">{{ borrowing.days_left }}</span>{% else %}{{ borrowing.days_left }}{% endif %}</td>
+                    <td class=" gray-text">{{ borrowing.borrowing_days }}</td>
+                    <td class=" gray-text">{{ borrowing.borrow_date }}</td>
+                    <td class=" gray-text">{% if borrowing.return_date is Null %}{% else %}{{ borrowing.return_date }}{% endif %}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% else %}
+    <p class="text-secondary small my-3">There is no borrowing yet</p>
+{% endif %}
+</div>
+{% endblock %}

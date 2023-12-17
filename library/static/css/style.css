@@ -1,0 +1,148 @@
+body {
+    background-color: #fafafa;
+    margin-bottom: 50px;
+    font-family: 'Lato', serif;
+
+}
+ul.errorlist {
+    color: #a80303;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ul.messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+a.main-menu {
+    color: #b9daec !important;
+}
+a.main-menu:hover {
+    color: #ffffff !important;
+}
+a.dropdown-item:active{
+    background-color: #1771a5;
+}
+a.dropdown-item:hover{
+    background-color: #054d77;
+}
+a.main-menu:visited {
+    color: #c95a7f;
+}
+a.active {
+    color: #ffffff !important;
+}
+a.main-link {
+    color: #0374a8;
+    text-decoration: none;
+}
+a.main-link:hover {
+    color: #38a1d1;
+    text-decoration: underline;
+}
+a.footer-registration-link {
+    text-decoration: none;
+}
+p.user-menu {
+    color: #5e5e5e;
+}
+div.main-menu {
+    background-color: #054d77;
+}
+div.user-menu {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #dadada;
+}
+ul.dropdown-menu {
+    background-color: #0c4c70;
+}
+div.alert {
+    border-radius: 0;
+}
+div.card {
+    border-radius: 0;
+    border: 1px solid #e2e2e2;
+    padding: 3px;
+}
+div.card-header {
+    color: #1a1a1a;
+    background-color: #ffffff;
+    border: 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+div.card-description {
+    color: #808080;
+    background-color: #ffffff;
+    border: 0;
+    text-align: center;
+}
+div.card-value {
+    color: #2368b8;
+    background-color: #ffffff;
+    border: 0;
+    text-align: center;
+}
+div.footer {
+    background-color: #313131;
+    padding: 8px 13px;
+}
+p.footer {
+    color: #c5c5c5;
+    font-size: 12px;
+    margin: 0px;
+}
+td.book-detail-table-header {
+    width: 13vmax;
+}
+h1.header {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 15px 0px;
+}
+h2.header {
+    margin: 15px 0px;
+}
+.btn {
+    padding: 5px 25px;
+    margin: 10px 5px 10px 0px;
+    border-radius: 0;
+}
+th.tight-width {
+    width: 35px;
+}
+th.medium-width {
+    max-width: 300px;
+}
+.gray-text {
+    color: #5f5f5f !important;
+}
+input {
+    border-radius: 0 !important;
+}
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    width: 240px;
+    color: #ffffff;
+    font-size: 13px;
+    background-color: #535353;
+    border-radius: 0px;
+    padding: 10px;
+  }
+
+  .hover-text:hover .tooltip-text {
+    visibility: visible;
+  }
+  #top {
+    top: -60px;
+    left: -40px;
+  }
+  .hover-text {
+    position: relative;
+    display: inline-block;
+    margin: 0px 8px;
+  }

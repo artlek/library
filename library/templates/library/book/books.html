@@ -1,0 +1,66 @@
+{% extends "library/base.html" %}
+
+{% block title %}Book list{% endblock %}
+{% block content %}
+<div class="col-xxl-10 m-3">
+<h1 class="header">Book list</h1>
+{% if request.user.groups.all.0.name == "Librarian" %}
+    <a href="{% url "add_book" %}" class="btn btn-success btn-sm">Add book</a>
+{% endif %}
+{% if books %}
+    <div class="table-responsive">
+        <table class="table table-hover table-light table-sm small">
+            <thead>
+                <tr>
+                    <th class="col"></th>
+                    <th class="col">ID</th>
+                    <th class="col">Title</th>
+                    <th class="col">Author</th>
+                    <th class="col">Category</th>
+                    <th class="col">Publisher</th>
+                    <th class="col">Published</th>
+                    <th class="col">Added</th>
+                    <th class="col">Pages</th>
+                    <th class="col">Status</th>
+                    <th class="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in page_obj %}
+                <tr>
+                    <td>{{ book.counter }}.</td>
+                    <td class="gray-text">{{ book.id }}</td>
+                    <td class="gray-text"><a href="{% url "book_detail" book.id %}" class="main-link">{{ book.title }}</a></td>
+                    <td class="gray-text">{{ book.author.name }} {{ book.author.surname }}</td>
+                    <td class="gray-text">{{ book.category }}</td>
+                    <td class="gray-text">{{ book.publisher }}</td>
+                    <td class="gray-text">{{ book.published }}</td>
+                    <td class="gray-text">{{ book.added }}</td>
+                    <td class="gray-text">{{ book.pages }}</td>
+                    <td class="gray-text">{% if book.is_borrowed %}<spam class="text-danger">borrowed</span>{% else %}<spam class="text-success">available</span>{% endif %}
+                    {% if request.user.groups.all.0.name == "Librarian" %}
+                        <td><a href="{% url 'edit_book' book.id %}" class="main-link">edit</a></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination pagination-sm">
+            {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link main-link" href="?page=1">&laquo; first</a></li>
+                <li class="page-item"><a class="page-link main-link" href="?page={{ page_obj.previous_page_number }}">previous</a></li>
+            {% endif %}
+                <li class="page-item"><span class="page-link gray-text">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></li>
+            {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link main-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
+                <li class="page-item"><a class="page-link main-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+{% else %}
+    <p class="small text-secondary my-3">There is no book</p>
+{% endif %}
+</div>
+{% endblock %}

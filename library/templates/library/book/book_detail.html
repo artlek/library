@@ -1,0 +1,56 @@
+{% extends "library/base.html" %}
+
+{% block title %}Book detail: {{ book.title }}{% endblock %}
+{% block content %}
+<div class="col-lg-6 m-3">
+    <h1 class="header">Book detail</h1>
+    <h2 class="my-3 header">{{ book.title }}</h2>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td class="book-detail-table-header">Id</td>
+                    <td class="gray-text">{{ book.id }}</td>
+                </tr>
+                <tr>
+                    <td class="book-detail-table-header">Title</td>
+                    <td class="gray-text">{{ book.title }}</td>
+                </tr>
+                <tr>
+                    <td class="book-detail-table-header">Author</td>
+                    <td class="gray-text">{{ book.author }}</td>
+                </tr>
+                <tr>
+                    <td class="book-detail-table-header">Publisher</td>
+                    <td class="gray-text">{{ book.publisher }}</td>
+                </tr>
+                <tr>
+                    <td class="book-detail-table-header">Publication date</td>
+                    <td class="gray-text">{{ book.published }}</td>
+                </tr>
+                <tr>
+                    <td class="book-detail-table-header">Category</td>
+                    <td class="gray-text">{{ book.category }}</td>
+                </tr>
+                <tr>
+                    <td class="book-detail-table-header">Description</td>
+                    <td class="gray-text">{{ book.description }}</td>
+                </tr>
+                <tr>
+                    <td class="book-detail-table-header">Pages</td>
+                    <td class="gray-text">{{ book.pages }}</td>
+                </tr>
+                <tr>
+                    <td class="book-detail-table-header">Kind of cover</td>
+                    <td class="gray-text">{{ book.cover }}</td>
+                </tr>
+                <tr>
+                    <td class="book-detail-table-header">Added date</td>
+                    <td class="gray-text">{{ book.added }}</td>
+                </tr>
+                <tr>
+                    <td class="book-detail-table-header">Availability</td>
+                    <td class="gray-text">{% if book.is_borrowed %}<spam class="text-danger">borrowed</span>{% else %}<spam class="text-success">available</span>{% endif %}</td>
+                </tr>
+            </tbody>
+        </table>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "library/base.html" %}
+
+{% block title %}Register{% endblock %}
+{% block content %}
+<div class="container d-flex justify-content-center">
+	<div class="container col-lg-4 m-3 p-3">
+		<form method="POST" novalidate>
+			{% csrf_token %}
+			<h1 class="m-2 my-4 header">{{ header }}</h1>
+			{% for field in form %}
+				<div class="field">
+					<label class="form-label m-2 small">{{ field.label_tag }}</label>
+					<div class="mx-2 small">{{ field.errors }}</div>
+					{{ field }}
+				</div>
+			{% endfor %}
+			<button class="btn btn-primary btn-sm mx-2 my-3 py-2 d-grid col-12" type="submit">Register</button>
+		</form>
+		<div class="d-flex justify-content-center">
+			{% if request.resolver_match.url_name  == 'registration' %}
+				
+				<span class="hover-text">
+					<a class="main-link small" href=" {% url "librarian-registration" %}">Registration for librarian</a>
+					<span class="tooltip-text" id="top">Registration for librarian creates an account as librarian user.</span>
+				</span>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% endblock content %}

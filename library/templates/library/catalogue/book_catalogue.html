@@ -1,0 +1,77 @@
+{% extends "library/base.html" %}
+
+{% block title %}Book Catalogue - Library Application{% endblock %}
+{% block menu %}{% endblock %}
+{% block content %}
+<div class="col-xxl-10 m-3">
+<h1 class="header">Book catalogue</h1>
+<div class="alert alert-secondary d-flex flex-row align-items-center text-secondary" role="alert">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-info-circle me-3 mt-2" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+      </svg>
+        Search for your book by typing its author or title below.<br>
+        The last column shows availability of the book.<br>
+        Note that login to the service is not required.
+</div>
+<form method="GET" novalidate>
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="fieldWrapper">
+            <label class="form-label mt-2 mb-0 small">{{ field.label }}</label>
+            <div class="small">{{ field.errors }}</div>
+            {{ field }}
+        </div>
+    {% endfor %}
+    <button class="btn btn-success btn-sm" type="submit">Search</button>
+    <a href="{% url "book-catalogue" %}" class="btn btn-danger btn-sm" type="button">Clear</a>
+</form>
+{% if books %}
+    <div class="table-responsive">
+        <table class="table table-light table-sm small mt-3">
+            <thead>
+                <tr>
+                    <th class="col tight-width "></th>
+                    <th class="col tight-width ">ID</th>
+                    <th class="col">Title</th>
+                    <th class="col">Author name</th>
+                    <th class="col">Author surname</th>
+                    <th class="col">Category</th>
+                    <th class="col">Pages</th>
+                    <th class="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                    <tr>
+                        <td class="gray-text">{{ book.counter }}.</td>
+                        <td class="gray-text">{{ book.id }}</td>
+                        <td class="gray-text">{{ book.title }}</td>
+                        <td class="gray-text">{{ book.author_name }}</td>
+                        <td class="gray-text">{{ book.author_surname }}</td>
+                        <td class="gray-text">{{ book.category }}</td>
+                        <td class="gray-text">{{ book.pages }}</td>
+                        <td class="gray-text">{% if book.is_borrowed == True %}<spam class="text-danger">borrowed</span>{% else %}available{% endif %}
+                    </tr>
+                {% endfor %} 
+            </tbody>
+        </table>
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination pagination-sm">
+            {% if books.has_previous %}
+                <li class="page-item"><a class="page-link main-link" href="?page=1&search={{ search_text }}">&laquo; first</a></li>
+                <li class="page-item"><a class="page-link main-link" href="?page={{ books.previous_page_number }}&search={{ search_text }}">previous</a></li>
+            {% endif %}
+                <li class="page-item"><span class="page-link gray-text">Page {{ books.number }} of {{ books.paginator.num_pages }}</span></li>
+            {% if books.has_next %}
+                <li class="page-item"><a class="page-link main-link" href="?page={{ books.next_page_number }}&search={{ search_text }}">next</a></li>
+                <li class="page-item"><a class="page-link main-link" href="?page={{ books.paginator.num_pages }}&search={{ search_text }}">last &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+{% else %}
+    <p class="small text-secondary my-3">There is no book</p>
+{% endif %}
+</div>
+{% endblock %}
